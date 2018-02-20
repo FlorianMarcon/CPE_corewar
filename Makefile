@@ -23,10 +23,8 @@ LIB	=	-L$(WAY_LIB) -lmy
 
 NAME	=	changer_le_nom
 
-all:	$(OBJ)
-	make -C./$(WAY_LIB)
-	$(CC) -o $(NAME) $(OBJ) $(LIB)
-	./$(NAME)
+all:
+	make -C./assembleur
 
 clean:
 	make clean -C./$(WAY_LIB)
