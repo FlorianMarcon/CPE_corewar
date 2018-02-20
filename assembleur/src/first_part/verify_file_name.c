@@ -19,10 +19,10 @@ int	verify_file_name(char *path)
 	int fd = open(path, O_RDONLY);
 
 	if (len <= 2 || fd == -1) {
-		return (0);
+		return (-1);
 	} else if (path[len - 1] != 's' || path[len - 2] != '.') {
 		close(fd);
-		return (0);
+		return (-1);
 	} else {
 		return (fd);
 	}

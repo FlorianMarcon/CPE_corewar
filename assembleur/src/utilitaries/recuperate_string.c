@@ -15,11 +15,20 @@ char	*recuperate_string(char *str)
 	int i = 0;
 	int a = 0;
 
+	if (new == NULL)
+		return (NULL);
 	while (str[i] != '"' && str[i] != '\0')
 		i++;
-	i++;
+	if (str[i++] == '\0') {
+		free(new);
+		return (NULL);
+	}
 	while (str[i] != '"' && str[i] != '\0')
 		new[a++] = str[i++];
+	if (str[i] == '\0') {
+		free(new);
+		return (NULL);
+	}
 	new[a] = '\0';
 	return (new);
 }

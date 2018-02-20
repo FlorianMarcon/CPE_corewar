@@ -10,6 +10,7 @@
 #include "my.h"
 #include "get_next_line.h"
 int	syntax_instruction_is_valid(char **msg);
+char	*recuperate_string(char *str);
 
 char	*get_next_instruction(int fd)
 {

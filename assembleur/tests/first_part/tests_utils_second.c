@@ -10,6 +10,7 @@
 int	create_new_file(char *path_old);
 fd_t	*open_create_file(char *path);
 char	*create_name_new_file(char *path_old);
+int	field_header(header_t *h);
 
 Test(create_new_file, test1)
 {
@@ -50,9 +51,7 @@ Test(create_name_new_file, test2)
 
 	cr_assert_str_eq(new, "b.cor");
 }
-/*
-Test(open_create_file, test1)
+Test(field_header, test1)
 {
-	fd_t *fd = create_new_file("data/")
+
 }
-*/

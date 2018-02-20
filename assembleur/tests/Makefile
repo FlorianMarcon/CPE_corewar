@@ -15,6 +15,7 @@ SRC	=	$(WAY)/first_part/verify_file_name.c	\
 		$(WAY)/utilitaries/recuperate_string.c		\
 		$(WAY)/first_part/create_new_file.c		\
 		$(WAY)/first_part/open_create_file.c		\
+		$(WAY)/first_part/field_header.c		\
 
 SRC_UT	=	first_part/tests_utils.c	\
 		first_part/tests_utils_second.c	\
