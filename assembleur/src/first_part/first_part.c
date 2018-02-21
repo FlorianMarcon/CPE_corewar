@@ -33,11 +33,13 @@ int	write_inutile_byte(int fd, int nb)
 int	first_part(fd_t *fd)
 {
 	header_t *header = malloc(sizeof(*header));
+	int res;
 
 	if (header == NULL)
-		return (0);
-	field_header(header, fd);
-	write(fd->fd_new, header, sizeof(*header));
+		return (84);
+	res = field_header(header, fd);
+	if (res != 84)
+		write(fd->fd_new, header, sizeof(*header));
 	free(header);
-	return (1);
+	return (res);
 }

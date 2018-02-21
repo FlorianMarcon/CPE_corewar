@@ -30,13 +30,13 @@ int	field_header(header_t *h, fd_t *fd)
 	char *var = recuperate_for_header(NAME_CMD_STRING, fd);
 
 	if (var == NULL)
-		return (0);
+		return (84);
 	h->magic = COREWAR_EXEC_MAGIC;
 	my_strcpy(h->prog_name, var);
 	free(var);
 	var = recuperate_for_header(COMMENT_CMD_STRING, fd);
 	if (var == NULL)
-		return (0);
+		return (84);
 	my_strcpy(h->comment, var);
-	return (1);
+	return (0);
 }
