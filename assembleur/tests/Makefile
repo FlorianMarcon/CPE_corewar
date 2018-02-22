@@ -9,19 +9,20 @@ CC	=	gcc
 
 WAY	=	../src
 
-SRC	=	$(WAY)/first_part/verify_file_name.c	\
-		$(WAY)/utilitaries/my_str_to_word_array.c	\
+SRC	=	$(WAY)/create_new_file/verify_file_name.c	\
+		$(WAY)/create_new_file/create_new_file.c	\
+		$(WAY)/is_variable/is_registre.c		\
 		$(WAY)/utilitaries/syntax_instruction_is_valid.c	\
 		$(WAY)/utilitaries/recuperate_string.c		\
-		$(WAY)/first_part/create_new_file.c		\
-		$(WAY)/first_part/open_create_file.c		\
-		$(WAY)/first_part/field_header.c		\
+		$(WAY)/utilitaries/parsing_str.c		\
+		$(WAY)/utilitaries/get_next_instruction.c	\
 
-SRC_UT	=	first_part/tests_utils.c	\
-		first_part/tests_utils_second.c	\
-		utilitaries/tests_utils.c	\
+SRC_UT	=	is_variable/tests_utils.c			\
+		utilitaries/create_new_file/tests_utils.c	\
 		utilitaries/instruction_is_valid/tests_utils.c	\
 		utilitaries/recuperate_string/tests_utils.c	\
+		utilitaries/parsing_str/tests_utils.c	\
+		utilitaries/verify_file_name/tests_utils.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

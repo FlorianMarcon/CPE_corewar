@@ -7,6 +7,7 @@
 
 #include <criterion/criterion.h>
 #include "header_asm.h"
+#include "op.h"
 int	create_new_file(char *path_old);
 fd_t	*open_create_file(char *path);
 char	*create_name_new_file(char *path_old);
@@ -50,8 +51,4 @@ Test(create_name_new_file, test2)
 	new = create_name_new_file(str);
 
 	cr_assert_str_eq(new, "b.cor");
-}
-Test(field_header, test1)
-{
-
 }
