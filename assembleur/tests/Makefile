@@ -12,6 +12,7 @@ WAY	=	../src
 SRC	=	$(WAY)/create_new_file/verify_file_name.c	\
 		$(WAY)/create_new_file/create_new_file.c	\
 		$(WAY)/is_variable/is_registre.c		\
+		$(WAY)/is_variable/is_label.c			\
 		$(WAY)/utilitaries/syntax_instruction_is_valid.c	\
 		$(WAY)/utilitaries/recuperate_string.c		\
 		$(WAY)/utilitaries/parsing_str.c		\
