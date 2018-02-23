@@ -15,7 +15,7 @@ int	nb_element(char *str, char sep)
 	int nb = 0;
 
 	while (str[i] != '\0') {
-		if (str[i] == sep && i != 0 && str[i - 1] != sep)
+		if ((str[i] & sep) == str[i] && i != 0 && (str[i - 1] & sep) != str[i - 1])
 			nb++;
 		i++;
 	}
@@ -23,11 +23,11 @@ int	nb_element(char *str, char sep)
 	return (nb);
 }
 
-int	len_until_separator(char *str, char separator)
+int	len_until_separator(char *str, char sep)
 {
 	int i = 0;
 
-	while (str[i] != separator)
+	while ((str[i] & sep) != str[i] && str[i] != '\0')
 		i++;
 	return (i);
 }
@@ -45,11 +45,11 @@ char	**parsing_str(char *str, char separator)
 	if (tab == NULL)
 		return (NULL);
 	while (i < my_strlen(str) && str[i] != '\0') {
-		if (str[i] == separator) {
+		if ((str[i] & separator) == str[i]) {
 			i++;
 		} else {
 			c = len_until_separator(&str[i], separator);
-			tab[a] = malloc(sizeof(*tab[a]) * c + 1);
+			tab[a] = malloc(sizeof(*tab[a]) * (c + 1));
 			my_strncpy(tab[a++], &str[i], c);
 			i += c;
 		}

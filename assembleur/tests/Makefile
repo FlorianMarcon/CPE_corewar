@@ -19,6 +19,8 @@ SRC	=	$(WAY)/op.c					\
 		$(WAY)/is_variable/which_variable.c		\
 		$(WAY)/verification/verification_argument.c	\
 		$(WAY)/verification/verification_instruction.c	\
+		$(WAY)/verification/verification_file.c		\
+		$(WAY)/verification/verification_name_and_comment.c	\
 		$(WAY)/utilitaries/syntax_instruction_is_valid.c	\
 		$(WAY)/utilitaries/len_tab.c			\
 		$(WAY)/utilitaries/recuperate_string.c		\
@@ -35,7 +37,8 @@ SRC_UT	=	is_variable/tests_utils.c			\
 		utilitaries/verify_file_name/tests_utils.c	\
 		utilitaries/len_tab/tests_utils.c		\
 		utilitaries/search_function/tests_utils.c	\
-		verification/tests_utils.c		\
+		verification/tests_utils.c			\
+		verification/tests_utils_second.c		\
 
 OBJ	=	$(SRC:.c=.o)
 
