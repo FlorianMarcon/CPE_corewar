@@ -5,8 +5,20 @@
 ** header_asm
 */
 
+#include "my.h"
+
 #ifndef ASM_
 #define ASM_
+
+typedef struct label {
+	char *name;
+	int position;
+}label_t;
+
+typedef struct analyse_file {
+	linked_list_t *label;
+	int count;
+}analyse_file_t;
 
 typedef struct fd {
 	int fd_old;

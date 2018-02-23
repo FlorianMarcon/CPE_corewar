@@ -21,6 +21,9 @@ SRC	=	$(WAY)/op.c					\
 		$(WAY)/verification/verification_instruction.c	\
 		$(WAY)/verification/verification_file.c		\
 		$(WAY)/verification/verification_name_and_comment.c	\
+		$(WAY)/size/size_function.c			\
+		$(WAY)/size/size_argument.c			\
+		$(WAY)/size/size_instruction.c			\
 		$(WAY)/utilitaries/syntax_instruction_is_valid.c	\
 		$(WAY)/utilitaries/len_tab.c			\
 		$(WAY)/utilitaries/recuperate_string.c		\
@@ -32,6 +35,7 @@ SRC	=	$(WAY)/op.c					\
 
 SRC_UT	=	is_variable/tests_utils.c			\
 		is_variable/tests_utils_second.c		\
+		size/tests_utils.c				\
 		utilitaries/create_new_file/tests_utils.c	\
 		utilitaries/instruction_is_valid/tests_utils.c	\
 		utilitaries/recuperate_string/tests_utils.c	\

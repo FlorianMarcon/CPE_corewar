@@ -5,7 +5,7 @@
 ** Login   <astek@epitech.net>
 **
 ** Started on  Mon Mar 30 11:14:31 2009 Astek
-** Last update Tue Mar 22 16:44:20 2011 Astek
+** Last update Tue Feb 20 11:51:34 2018 Marcon
 */
 
 #ifndef _OP_H_
@@ -46,12 +46,12 @@ typedef char    args_type_t;
 
 struct  op_s
 {
-   char         *mnemonique;
-   char         nbr_args;
-   args_type_t  type[MAX_ARGS_NUMBER];
-   char         code;
-   int          nbr_cycles;
-   char         *comment;
+	char         *mnemonique;
+	char         nbr_args;
+	args_type_t  type[MAX_ARGS_NUMBER];
+	char         code;
+	int          nbr_cycles;
+	char         *comment;
 };
 
 typedef struct op_s     op_t;
@@ -76,11 +76,11 @@ extern  op_t    op_tab[];
 
 struct header_s
 {
-   int  magic;
+	int  magic;
 # define COREWAR_EXEC_MAGIC      0xea83f3        /* why not */
-   char prog_name[PROG_NAME_LENGTH + 1];
-   int  prog_size;
-   char comment[COMMENT_LENGTH + 1];
+	char prog_name[PROG_NAME_LENGTH + 1];
+	int  prog_size;
+	char comment[COMMENT_LENGTH + 1];
 };
 
 typedef struct header_s header_t;
