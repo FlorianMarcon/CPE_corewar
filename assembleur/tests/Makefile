@@ -27,6 +27,8 @@ SRC	=	$(WAY)/op.c					\
 		$(WAY)/utilitaries/parsing_str.c		\
 		$(WAY)/utilitaries/get_next_instruction.c	\
 		$(WAY)/utilitaries/search_function.c		\
+		$(WAY)/utilitaries/save_label.c			\
+		$(WAY)/utilitaries/my_strndup.c			\
 
 SRC_UT	=	is_variable/tests_utils.c			\
 		is_variable/tests_utils_second.c		\
@@ -37,6 +39,8 @@ SRC_UT	=	is_variable/tests_utils.c			\
 		utilitaries/verify_file_name/tests_utils.c	\
 		utilitaries/len_tab/tests_utils.c		\
 		utilitaries/search_function/tests_utils.c	\
+		utilitaries/save_label/tests_utils.c		\
+		utilitaries/my_strndup/tests_utils.c		\
 		verification/tests_utils.c			\
 		verification/tests_utils_second.c		\
 
