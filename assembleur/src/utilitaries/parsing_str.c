@@ -26,9 +26,15 @@ int	nb_element(char *str, char sep)
 int	len_until_separator(char *str, char sep)
 {
 	int i = 0;
+	int cote = 1;
 
-	while ((str[i] & sep) != str[i] && str[i] != '\0')
+	while (str[i] != '\0') {
+		if ((str[i] & sep) == str[i] && cote == 1)
+			return (i);
+		if (str[i] == '"')
+			cote = cote * -1;
 		i++;
+	}
 	return (i);
 }
 

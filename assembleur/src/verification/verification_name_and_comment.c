@@ -18,7 +18,7 @@ int	verification_name(int fd)
 {
 	char *str = NULL;
 	char **tab = NULL;
-
+	int res;
 	if ((str = get_next_instruction(fd)) == NULL) {
 		return (0);
 	}
@@ -26,20 +26,16 @@ int	verification_name(int fd)
 		return (0);
 	} else {
 		if (len_tab(tab) != 2 || my_strcmp(NAME_CMD_STRING, tab[0]) != 0) {
-			free(str);
-			free(tab);
-			return (0);
+			res = 0;
 		} else if (recuperate_string(tab[1]) == NULL){
-			free(str);
-			free(tab);
-			return (0);
+			res = 0;
 		} else {
-			free(str);
-			free(tab);
-			return (1);
+			res = 1;
 		}
+//		free(str);
+		free(tab);
+		return (res);
 	}
-	return (1);
 }
 int	verification_comment(int fd)
 {
@@ -52,15 +48,15 @@ int	verification_comment(int fd)
 		return (0);
 	else {
 		if (len_tab(tab) != 2 || my_strcmp(COMMENT_CMD_STRING, tab[0]) != 0) {
-			free(str);
+//			free(str);
 			free(tab);
 			return (0);
 		} else if (recuperate_string(tab[1]) == NULL){
-			free(str);
+//			free(str);
 			free(tab);
 			return (0);
 		} else {
-			free(str);
+//			free(str);
 			free(tab);
 			return (1);
 		}

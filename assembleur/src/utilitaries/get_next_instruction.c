@@ -29,3 +29,19 @@ char	*get_next_instruction(int fd)
 	}
 	return (str);
 }
+
+char	*get_next_instruction_simply(int fd)
+{
+	char *str = NULL;
+
+	while (str == NULL) {
+		str = get_next_line(fd);
+		delete_commentary(str);
+		delete_inutile_space(&str);
+		if (my_strlen(str) == 0) {
+			free(str);
+			str = NULL;
+		}
+	}
+	return (str);
+}

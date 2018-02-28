@@ -41,3 +41,12 @@ Test(verification_name_and_comment, test7)
 		close(fd);
 	}
 }
+Test(verification_name_and_comment, test8)
+{
+	int fd = open("../champion/flonflon.v.2.s", O_RDONLY);
+
+	if (fd != -1) {
+		cr_assert_eq(verification_name_and_comment(fd), 1);
+		close(fd);
+	}
+}
