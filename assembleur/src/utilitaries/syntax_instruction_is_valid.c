@@ -16,9 +16,9 @@ void	delete_commentary(char *str)
 
 	while (str[i] != '\0' && str[i] != COMMENT_CHAR)
 		i++;
-	if (str[i] == COMMENT_CHAR) {
+	if (i > 0 && str[i] == COMMENT_CHAR) {
 		i--;
-		while (str[i] == ' ' || str[i] == '\t')
+		while ((str[i] == ' ' || str[i] == '\t') && i >= 0)
 			i--;
 		str[++i] = '\0';
 	} else

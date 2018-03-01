@@ -47,6 +47,7 @@ analyse_file_t	*count_file_and_save_label(char *path)
 		return (NULL);
 	if ((an = malloc(sizeof(*an))) == NULL)
 		return (NULL);
+	an->label = NULL;
 	while ((str = get_next_instruction(fd)) != NULL) {
 		if (loop_save_label(str, an) == 0) {
 //			free(str);

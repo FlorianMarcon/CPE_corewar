@@ -18,7 +18,7 @@ int	save_label(analyse_file_t *an, char *label)
 		return (0);
 	l->name = my_strndup(label, my_strlen(label) - 1);
 	l->position = an->count + 1;
-	if (!an->label) {
+	if (an->label == NULL) {
 		if ((an->label = malloc(sizeof(linked_list_t))) == NULL) {
 			free(l);
 			return (0);
