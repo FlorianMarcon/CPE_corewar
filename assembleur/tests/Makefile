@@ -20,6 +20,7 @@ SRC	=	$(WAY)/op.c					\
 		$(WAY)/verification/verification_argument.c	\
 		$(WAY)/verification/verification_instruction.c	\
 		$(WAY)/verification/verification_file.c		\
+		$(WAY)/verification/label_is_present_in_file.c		\
 		$(WAY)/verification/verification_name_and_comment.c	\
 		$(WAY)/verification/count_file_and_save_label.c	\
 		$(WAY)/size/size_function.c			\
@@ -51,6 +52,8 @@ SRC_UT	=	is_variable/tests_utils.c			\
 		verification/tests_utils.c			\
 		verification/tests_utils_second.c		\
 		verification/tests_utils_third.c		\
+		verification/tests_utils_four.c			\
+		verification/tests_utils_five.c			\
 
 OBJ	=	$(SRC:.c=.o)
 
