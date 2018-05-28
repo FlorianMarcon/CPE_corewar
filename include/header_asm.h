@@ -21,8 +21,8 @@ typedef struct analyse_file {
 }analyse_file_t;
 
 typedef struct fd {
-	int fd_old;
-	int fd_new;
+	int old;
+	int new;
 
 	int write_byte;
 }fd_t;
@@ -74,6 +74,14 @@ int	syntax_instruction_is_valid(char **msg);
 
 	void	delete_commentary(char *str);
 
+void	integer_little_to_big_endian(int *nb);
+
+void	short_little_to_big_endian(short *nb);
+
+char	compute_encoding_byte(char *argu);
+
+label_t	*search_label_in_list(analyse_file_t *an, char *str);
+
 // size
 
 int	size_argument(char *str);
@@ -81,6 +89,8 @@ int	size_argument(char *str);
 int	size_function(char *str);
 
 int	size_instruction(char **tab);
+
+int	compute_size(char *arg);
 
 // is variable
 
@@ -90,8 +100,34 @@ int	is_indirect(char *str);
 
 int	is_label(char *str);
 
+int	is_label_variable(char *str);
+
 int	is_registre(char *str);
 
 int	which_variable(char *str);
+
+// create_new_file
+
+int	create_new_file(char *path_old);
+
+// write
+
+int	write_header(fd_t *fd, analyse_file_t *an);
+
+int	write_encoding_byte(fd_t *fd, char **tab, int count);
+
+int	write_parameters(fd_t *fd, char **tab, int count, analyse_file_t *an);
+
+int	write_function(fd_t *fd, char *func, int count);
+
+int	write_file(fd_t *fd , analyse_file_t *an);
+
+int	write_register(fd_t *fd, char *arg, int count);
+
+int	write_direct(fd_t *fd, char *arg, int count, analyse_file_t *an);
+
+int	write_indirect(fd_t *fd, char *arg, int count);
+
+int	write_zjmp_fork(fd_t *fd, char *arg, int count, analyse_file_t *an);
 
 #endif

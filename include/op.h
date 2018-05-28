@@ -5,7 +5,7 @@
 ** Login   <astek@epitech.net>
 **
 ** Started on  Mon Mar 30 11:14:31 2009 Astek
-** Last update Tue Feb 20 11:51:34 2018 Marcon
+** Last update Sat Mar 10 23:36:02 2018 Marcon
 */
 
 #ifndef _OP_H_
@@ -40,8 +40,8 @@ typedef char    args_type_t;
 # define T_REG           1       /* register */
 # define T_DIR           2       /* direct  (ld  #1,r1  put 1 into r1) */
 # define T_IND           4       /* indirect always relative
-                                   ( ld 1,r1 put what's in the address (1+pc)
-                                   into r1 (4 bytes )) */
+				( ld 1,r1 put what's in the address (1+pc)
+				into r1 (4 bytes )) */
 # define T_LAB           8       /* LABEL */
 
 struct  op_s

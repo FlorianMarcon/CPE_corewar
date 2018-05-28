@@ -7,6 +7,7 @@
 
 #include <stdarg.h>
 #include "my_printf.h"
+#include "get_next_line.h"
 
 #ifndef MY_
 #define MY_
@@ -75,7 +76,7 @@ int	my_showmem(char const *str, int size);
 
 int	my_showstr(char const *str);
 
-int	my_show_word_array(char *const *tab);
+//int	my_show_word_array(char *const *tab);
 
 char	*my_strcat(char *dest, char const *src);
 
@@ -83,9 +84,11 @@ char	*my_strncat(char *dest, char const *src, int nb);
 
 char	*my_strdup(char const *str);
 
+char	**my_tabdup(char **tab);
+
 char	*concat_params(int argc, char **argv);
 
-int	my_show_word_array(char * const *tab);
+//int	my_show_word_array(char * const *tab);
 
 char	**mise_en_tableau(char const *str, int nb_separateur);
 
@@ -102,11 +105,17 @@ int	len_unint(unsigned int);
 
 char	*stock_int_in_str(int nb);
 
+char    **parsing_str(char *str, char separator);
+
+int     len_tab(char **tab);
+
 typedef struct linked_list
 {
 	void *data;
 	struct linked_list *next;
 } linked_list_t;
+
+linked_list_t	*create_list(void *data);
 
 void	create_node(struct linked_list *tmp, void *dat);
 

@@ -17,26 +17,32 @@ CFLAGS	=	-W -Wall -Wextra -Werror -g3
 
 WAY_LIB	=	./lib/my
 
-WAY_TST	=	./tests
+WAY_ASM	=	./asm/
+
+WAY_VM	=	./corewar/
+
+WAY_TST_ASM	=	./$(WAY_ASM)/tests/
+
+WAY_TST_VM	=	./$(WAY_VM)/tests/
 
 LIB	=	-L$(WAY_LIB) -lmy
 
-NAME	=	changer_le_nom
-
 all:
-	make -C./assembleur
+	make -C./$(WAY_ASM)
+	make -C./$(WAY_VM)
 
 clean:
 	make clean -C./$(WAY_LIB)
-	$(RM) $(OBJ)
-	make clean -C./$(WAY_TST)
+	make clean -C./$(WAY_ASM)
+	make clean -C./$(WAY_VM)
 
 fclean:	clean
 	make fclean -C./$(WAY_LIB)
-	$(RM) $(NAME)
-	make fclean -C./$(WAY_TST)
+	make fclean -C./$(WAY_ASM)
+	make fclean -C./$(WAY_VM)
 
 re:	clean all
 
 tests_run:
-	make -C./$(WAY_TST)
+	make -C./$(WAY_TST_ASM)
+	make -C./$(WAY_TST_VM)
