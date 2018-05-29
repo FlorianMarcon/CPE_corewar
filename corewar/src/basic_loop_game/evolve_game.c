@@ -38,11 +38,6 @@ void	action_champion(corewar_t *core)
 		op = get_opcode_byte(champ, core);
 		i++;
 		if (op != 0 && champ->action_cycle > op_tab[op - 1].nbr_cycles) {
-			fprintf(stderr, "---------------------------\n");
-			fprintf(stderr, "|	%s	%i|\n", champ->name, i);
-			fprintf(stderr, "|	pc = %i	|\n", champ->pc);
-			fprintf(stderr, "|	%s	|\n", op_tab[op -1].mnemonique);
-			fprintf(stderr, "---------------------------\n");
 			champ->action_cycle = 0;
 			if (ptr[op - 1] != NULL)
 				ptr[op - 1](core, champ);
@@ -50,7 +45,6 @@ void	action_champion(corewar_t *core)
 			champ->pc++;
 		list = list->next;
 	}
-	fprintf(stderr, "Il y a %i champion\n", i);
 }
 void	evolve_game(corewar_t *core)
 {

@@ -11,8 +11,6 @@ int	basic_loop_game(corewar_t *core)
 {
 	core->last_alive = core->champion->data;
 	while (is_end(core->champion) == 0) {
-		fprintf(stderr, "-------------- ROUND %i-----------------\n", core->cycle);
-		fprintf(stderr, "cycle to die = %i \n", core->cycle_to_die);
 		if (core->cycle == core->dump)
 			display_dump(core);
 		evolve_game(core);
