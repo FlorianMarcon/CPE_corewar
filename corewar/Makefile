@@ -31,6 +31,7 @@ SRC	=	$(WAY)/main.c	\
 		$(WAY)/utilitaries/load_value_by_type.c	\
 		$(WAY)/utilitaries/display_dump.c	\
 		$(WAY)/utilitaries/convert_deci_to_hexa.c	\
+		$(WAY)/utilitaries/fill_graph_memory.c	\
 		$(WAY)/instruction/live_instruction.c	\
 		$(WAY)/instruction/zjmp_instruction.c	\
 		$(WAY)/instruction/ld_instruction.c	\
