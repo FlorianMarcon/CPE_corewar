@@ -5,9 +5,11 @@
 ** fill_graph_memory
 */
 
+#include "header_corewar.h"
+
 void	fill_graph_memory(corewar_t *core, champion_t *ch, int start, int nb)
 {
-	for (unsigned int i = 0; i != nb; i++) {
+	for (int i = 0; i != nb; i++) {
 		core->memory[(start + i) % MEM_SIZE] = ch->number;
 	}
 }
