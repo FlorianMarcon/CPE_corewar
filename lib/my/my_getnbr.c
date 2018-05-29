@@ -7,15 +7,14 @@
 
 #include "my.h"
 
-int	my_signe(char const *str)
+int	my_signe(char const *str, int i)
 {
 	int signe = 1;
-	int i = 0;
 
-	while ((str[i] == '+' || str[i] == '-')) {
-		if (str[i] == '-')
+	while (str[i-1] == '+' || str[i-1] == '-') {
+		if (str[i-1] == '-')
 			signe *= (-1);
-		i++;
+		i--;
 	}
 	return (signe);
 }
@@ -44,7 +43,7 @@ int	my_getnbr(char const *str)
 
 	while (str[i] != '\0' && (str[i] < 47 || str[i] > 58))
 		i++;
-	signe = my_signe(str);
+	signe = my_signe(str, i);
 	while (str[i] < 58 && str[i] > 47) {
 		a++;
 		i++;

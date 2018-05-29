@@ -21,6 +21,5 @@ char	*my_strdup(char const *str)
 		arr[i] = str[i];
 		i++;
 	}
-	arr[i] = '\0';
 	return (arr);
 }

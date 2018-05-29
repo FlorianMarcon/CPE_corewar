@@ -14,8 +14,10 @@ void	loop_game_graphique(corewar_t *core)
 	bonus_t bonus;
 
 	set_bonus(&bonus);
+	core->last_alive = core->champion->data;
 	while (sfRenderWindow_isOpen(bonus.win)) {
 		update_all(&bonus, core);
 		event(&bonus);
 	}
+	my_printf("The player %i (%s) has won.\n", core->last_alive->number, core->last_alive->name);
 }
