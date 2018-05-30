@@ -17,7 +17,8 @@ int	is_end(linked_list_t *list)
 	mem = ((champion_t *)(list->data))->number;
 	while (list != NULL) {
 		champ = (champion_t *)list->data;
-		if (champ != NULL && champ->alive == true && champ->number != mem)
+		if (champ != NULL && champ->alive == true &&
+							champ->number != mem)
 			return (0);
 		list = list->next;
 	}

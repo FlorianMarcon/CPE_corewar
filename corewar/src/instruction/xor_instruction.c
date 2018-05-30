@@ -33,7 +33,8 @@ int	xor_instruction(corewar_t *core, champion_t *ch)
 		return (1);
 	}
 	for (int i = 0; i != 3; i++) {
-		arr[i] = load_value_by_type(core, dec[i], (ch->pc + var) % MEM_SIZE);
+		arr[i] = load_value_by_type(core, dec[i], (ch->pc + var)
+								% MEM_SIZE);
 		if (dec[i] == T_REG)
 			var++;
 		else if (dec[i] == T_IND)

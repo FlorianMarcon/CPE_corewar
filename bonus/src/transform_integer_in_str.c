@@ -14,7 +14,7 @@ char	*transform_integer_in_str(int nb)
 	int tmp = 0;
 
 	if (str == NULL)
-		return(NULL);
+		return (NULL);
 	for (int i = size - 1; i >= 0; i--) {
 		tmp = nb % 10;
 		str[i] = '0' + tmp;

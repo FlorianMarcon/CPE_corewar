@@ -48,8 +48,10 @@ void	update_memory_graph(bonus_t *bonus, corewar_t *core)
 	if (frame->pixels == NULL)
 		return;
 	while ((y * WIDTH_TEXTURE) + x < MEM_SIZE) {
-		color = search_color_by_id(bonus->color, core->graph_memory[(y * WIDTH_TEXTURE) + x]);
-		write_one_memory(frame, (x++ * (4 * SIZE_SQUARE)), y * SIZE_SQUARE, color);
+		color = search_color_by_id(bonus->color,
+				core->graph_memory[(y * WIDTH_TEXTURE) + x]);
+		write_one_memory(frame, (x++ * (4 * SIZE_SQUARE)),
+							y * SIZE_SQUARE, color);
 		if (x * (SIZE_SQUARE) >= 1200) {
 			x = 0;
 			y++;

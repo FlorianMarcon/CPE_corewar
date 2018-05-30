@@ -10,7 +10,8 @@
 void	create_window(bonus_t *bonus)
 {
 	bonus->mode = (sfVideoMode){1200, 800, 32};
-	bonus->win = sfRenderWindow_create(bonus->mode, "COREWAR", sfClose, NULL);
+	bonus->win = sfRenderWindow_create(bonus->mode, "COREWAR",
+								sfClose, NULL);
 	if (!bonus->win)
 		return;
 	bonus->tex_back = sfTexture_createFromFile(PATH_BACK, NULL);
@@ -35,7 +36,7 @@ void	set_color(bonus_t *bonus)
 	int x = 500;
 	int y = 450;
 
-	for (unsigned int i = 0; i != 5 ; i++) {
+	for (unsigned int i = 0; i != 5; i++) {
 		bonus->color[i].color = arr[i];
 		bonus->color[i].id = i + 1;
 		write_one_memory(&bonus->memory, x * 4, y, arr[i]);

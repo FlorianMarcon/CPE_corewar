@@ -35,7 +35,8 @@ void	action_champion(corewar_t *core)
 	while (list != NULL) {
 		champ = (champion_t *)list->data;
 		op = get_opcode_byte(champ, core);
-		if (op != 0 && champ->action_cycle > op_tab[op - 1].nbr_cycles) {
+		if (op != 0 && champ->action_cycle >
+						op_tab[op - 1].nbr_cycles) {
 			champ->action_cycle = 0;
 			if (ptr[op - 1] != NULL)
 				ptr[op - 1](core, champ);

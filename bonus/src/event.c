@@ -19,5 +19,5 @@ void	event(bonus_t *bonus, corewar_t *core)
 	}
 	sfRenderWindow_clear(bonus->win, sfBlack);
 	display(bonus, core);
-        sfRenderWindow_display(bonus->win);
+	sfRenderWindow_display(bonus->win);
 }

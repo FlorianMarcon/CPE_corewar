@@ -25,7 +25,8 @@ void	ld_instruction_load_value(corewar_t *core, champion_t *ch, int *dec)
 }
 int	ld_instruction(corewar_t *core, champion_t *ch)
 {
-	int *dec = decoding_byte(core->memory[(ch->pc + 1) % core->size_memory]);
+	int *dec = decoding_byte(core->memory[(ch->pc + 1) %
+							core->size_memory]);
 
 	if (dec[1] != T_REG || (dec[0] != T_IND && dec[0] != T_DIR)) {
 		ch->pc++;
@@ -33,7 +34,7 @@ int	ld_instruction(corewar_t *core, champion_t *ch)
 	}
 	ld_instruction_load_value(core, ch, dec);
 	ch->r[dec[1] - 1] = dec[0];
- 	if (dec[0] == 0)
+	if (dec[0] == 0)
 		ch->carry = true;
 	else
 		ch->carry = false;

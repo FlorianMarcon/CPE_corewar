@@ -17,7 +17,6 @@ int	write_zjmp_fork(fd_t *fd, char *arg, int count, analyse_file_t *an)
 	if (is_label_variable(arg)) {
 		if ((lab = search_label_in_list(an, &arg[2])) == NULL)
 			return (0);
-			//fprintf(stderr, "lab->pos = %i		count = %i\n", lab->position, count);
 		a = lab->position - count;
 		short_little_to_big_endian(&a);
 		if ((write(fd->new, &a, 2)) == -1)
@@ -33,12 +32,12 @@ int	write_zjmp_fork(fd_t *fd, char *arg, int count, analyse_file_t *an)
 
 int	write_sti(fd_t *fd, char **arg, int count, analyse_file_t *an)
 {
-	int i = 1;
+	int i = 0;
 	int a;
 
 	if ((a = write_register(fd, arg[0], count)) == 0)
 		return (0);
-	while (i != 3) {
+	while (++i != 3) {
 		if (is_registre(arg[i])) {
 			a = write_register(fd, arg[i], count);
 			count += 1;
@@ -52,16 +51,15 @@ int	write_sti(fd_t *fd, char **arg, int count, analyse_file_t *an)
 		}
 		if (a == 0)
 			return (0);
-		i++;
 	}
 	return (1);
 }
 int	write_ldi(fd_t *fd, char **arg, int count, analyse_file_t *an)
 {
-	int i = 0;
+	int i = -1;
 	int a;
 
-	while (i != 2) {
+	while (++i != 2) {
 		if (is_registre(arg[i])) {
 			a = write_register(fd, arg[i], count);
 			count += 1;
@@ -75,7 +73,6 @@ int	write_ldi(fd_t *fd, char **arg, int count, analyse_file_t *an)
 		}
 		if (a == 0)
 			return (0);
-		i++;
 	}
 	a = write_register(fd, arg[2], count);
 	return (a);

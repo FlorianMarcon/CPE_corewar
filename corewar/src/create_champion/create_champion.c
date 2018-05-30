@@ -21,7 +21,7 @@ int	fill_header(champion_t *champ, int fd)
 	if (read(fd, &head, sizeof(head)) <= 0)
 		return (1);
 	integer_little_to_big_endian(&head.magic);
-	if (head.magic != COREWAR_EXEC_MAGIC) // a verifier unit test
+	if (head.magic != COREWAR_EXEC_MAGIC)
 		return (1);
 	my_strcpy(champ->name, head.prog_name);
 	my_strcpy(champ->comment, head.comment);

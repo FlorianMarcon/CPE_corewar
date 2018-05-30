@@ -11,7 +11,7 @@
 #include <SFML/Graphics.h>
 #include "header_corewar.h"
 
-#define PATH_BACK "./picture/background.png"
+#define PATH_BACK "./mat/background.png"
 #define SIZE_SQUARE 4
 #define WIDTH_TEXTURE 90
 
@@ -46,10 +46,10 @@ typedef struct bonus_s {
 	color_t color[6];
 
 	// text
-	sfText *name_champion[7];
+	sfText *name_champ[7];
 	int id_champ[7];
-	sfText *caracteristique[5];
-	sfText *value_carac[5];
+	sfText *caract[5];
+	sfText *val_carac[5];
 
 	// other
 	sfFont *font;

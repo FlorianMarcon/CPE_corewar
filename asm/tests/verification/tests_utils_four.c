@@ -26,15 +26,15 @@ linked_list_t	*create_list_test(void)
 
 Test(create_list_test, test)
 {
-	linked_list_t *l = create_list_test();
+	linked_list_t *list = create_list_test();
 	label_t *label;
 
-	cr_assert_eq(l->next->next, NULL);
-	cr_assert_neq(l->next, NULL);
-	label = (label_t *)l->data;
+	cr_assert_eq(list->next->next, NULL);
+	cr_assert_neq(list->next, NULL);
+	label = (label_t *)list->data;
 	cr_assert_neq(label, NULL);
 	cr_assert_str_eq(label->name, "live");
-	label = (label_t *)l->next->data;
+	label = (label_t *)list->next->data;
 	cr_assert_neq(label, NULL);
 	cr_assert_str_eq(label->name, "label");
 }

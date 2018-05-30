@@ -33,7 +33,8 @@ void	destroy_dead_champion(corewar_t *core)
 
 	while (tmp != NULL) {
 		champ = (champion_t *)tmp->data;
-		if (champ == NULL || champ->alive == false || champ->life_cycle > core->cycle_to_die) {
+		if (champ == NULL || champ->alive == false ||
+				champ->life_cycle > core->cycle_to_die) {
 			list = destroy_node(list, tmp);
 			tmp = list;
 		} else

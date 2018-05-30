@@ -12,21 +12,21 @@ char	*my_strndup(char *str, int n);
 
 int	save_label(analyse_file_t *an, char *label)
 {
-	label_t *l = malloc(sizeof(*l));
+	label_t *lab = malloc(sizeof(*lab));
 
-	if (l == NULL)
+	if (lab == NULL)
 		return (0);
-	l->name = my_strndup(label, my_strlen(label) - 1);
-	l->position = an->count;
+	lab->name = my_strndup(label, my_strlen(label) - 1);
+	lab->position = an->count;
 	if (an->label == NULL) {
 		if ((an->label = malloc(sizeof(linked_list_t))) == NULL) {
-			free(l);
+			free(lab);
 			return (0);
 		}
 		an->label->next = NULL;
-		an->label->data = l;
+		an->label->data = lab;
 	} else {
-		create_node(an->label, l);
+		create_node(an->label, lab);
 	}
 	return (1);
 }

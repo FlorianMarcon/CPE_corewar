@@ -7,7 +7,8 @@
 
 #include "header_corewar.h"
 
-void	put_programm_in_memory(corewar_t *core, champion_t *champ, unsigned int start)
+void	put_programm_in_memory(corewar_t *core, champion_t *champ,
+							unsigned int start)
 {
 	if (champ->load_address != -1)
 		start = champ->load_address;

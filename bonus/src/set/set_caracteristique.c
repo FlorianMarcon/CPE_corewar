@@ -21,16 +21,16 @@ void	set_caracteristique(bonus_t *bonus)
 	sfVector2f pos_val = {1100, 300};
 
 	for (; i != 4; i++) {
-		bonus->caracteristique[i] = sfText_create();
-		bonus->value_carac[i] = sfText_create();
-		sfText_setFont(bonus->caracteristique[i], bonus->font);
-		sfText_setFont(bonus->value_carac[i], bonus->font);
-		sfText_setString(bonus->caracteristique[i], caracteristique[i]);
-		sfText_setPosition(bonus->caracteristique[i], pos);
-		sfText_setPosition(bonus->value_carac[i], pos_val);
+		bonus->caract[i] = sfText_create();
+		bonus->val_carac[i] = sfText_create();
+		sfText_setFont(bonus->caract[i], bonus->font);
+		sfText_setFont(bonus->val_carac[i], bonus->font);
+		sfText_setString(bonus->caract[i], caracteristique[i]);
+		sfText_setPosition(bonus->caract[i], pos);
+		sfText_setPosition(bonus->val_carac[i], pos_val);
 		pos_val.y += 30;
 		pos.y += 30;
 	}
-	bonus->caracteristique[i] = NULL;
-	bonus->value_carac[i] = NULL;
+	bonus->caract[i] = NULL;
+	bonus->val_carac[i] = NULL;
 }

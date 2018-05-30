@@ -11,7 +11,8 @@ void	display_dump_line(int nb)
 {
 	char *str;
 
-	if (nb != 0 && ((nb) % 32) == 0 && (str = convert_deci_to_hexa(nb)) != NULL) {
+	if (nb != 0 && ((nb) % 32) == 0 &&
+				(str = convert_deci_to_hexa(nb)) != NULL) {
 		my_printf("\n%s", str);
 		for (unsigned int i = my_strlen(str); i != 5; i++)
 			my_printf(" ");

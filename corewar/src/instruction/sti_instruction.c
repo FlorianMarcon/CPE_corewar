@@ -9,8 +9,8 @@
 
 int	*sti_instruction_index(corewar_t *core, champion_t *ch)
 {
-
-	int *dec = decoding_byte(core->memory[(ch->pc + 1) % core->size_memory]);
+	int *dec = decoding_byte(core->memory[(ch->pc + 1) %
+							core->size_memory]);
 	int decalage = 3;
 
 	if (dec[0] != T_REG)
