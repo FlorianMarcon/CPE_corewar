@@ -33,11 +33,13 @@ int	fork_instruction(corewar_t *core, champion_t *ch)
 	champion_t *new = copy_champion(ch);
 	int val = load_short_variable(core, ch->pc + 1);
 
+
 	if (new == NULL) {
 		ch->pc++;
 		return (1);
 	}
 	create_node(core->champion, new);
 	new->pc = (ch->pc + val % IDX_MOD) % MEM_SIZE;
+	ch->pc = (ch->pc + 3) % MEM_SIZE;
 	return (0);
 }

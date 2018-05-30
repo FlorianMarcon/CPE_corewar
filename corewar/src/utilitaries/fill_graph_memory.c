@@ -10,6 +10,6 @@
 void	fill_graph_memory(corewar_t *core, champion_t *ch, int start, int nb)
 {
 	for (int i = 0; i != nb; i++) {
-		core->memory[(start + i) % MEM_SIZE] = ch->number;
+		core->graph_memory[(start + i) % MEM_SIZE] = ch->number;
 	}
 }

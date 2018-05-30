@@ -89,6 +89,8 @@ void	up_cycle_to_die(corewar_t *core);
 
 void	destroy_dead_champion(corewar_t *core);
 
+void	evolve_game(corewar_t *core);
+
 //utilitaries
 
 void	integer_little_to_big_endian(int *nb);
@@ -113,6 +115,7 @@ void	display_dump(corewar_t *core);
 
 char	*convert_deci_to_hexa(int nb);
 
+void	fill_graph_memory(corewar_t *core, champion_t *ch, int start, int nb);
 //instruction
 
 int	live_instruction(corewar_t *core, champion_t *ch);

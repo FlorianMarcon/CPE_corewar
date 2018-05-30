@@ -42,6 +42,7 @@ int	sti_instruction(corewar_t *core, champion_t *ch)
 	}
 	reg = ch->r[dist[1] - 1];
 	write_integer(core, ch->pc + dist[0], reg);
+	fill_graph_memory(core, ch, ch->pc + dist[0], 4);
 	ch->pc = (ch->pc + dist[2]) % core->size_memory;
 	return (0);
 }

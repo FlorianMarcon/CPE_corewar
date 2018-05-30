@@ -21,14 +21,16 @@ void	st_instruction_load_value(int *dec, corewar_t *core, champion_t *ch)
 		ch->pc = (ch->pc + 4) % core->size_memory;
 	} else if (dec[1] == T_IND) {
 		dec[1] = load_short_variable(core, ch->pc + 3);
-		write_integer(core, (ch->pc + dec[1]) % IDX_MOD, dec[0]);
+		write_integer(core, ch->pc + dec[1] % IDX_MOD, dec[0]);
+		fprintf(stderr, "WRITE\n");
+		fill_graph_memory(core, ch, ch->pc + dec[1] % IDX_MOD, 4);
 		ch->pc = (ch->pc + 5) % MEM_SIZE;
 	}
 }
 int	st_instruction(corewar_t *core, champion_t *ch)
 {
 	int *dec = decoding_byte(core->memory[ch->pc + 1]);
-
+	fprintf(stderr, "ST\n");
 	if (dec[0] != T_REG || (dec[1] == T_DIR)) {
 		ch->pc++;
 		return (1);

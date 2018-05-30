@@ -13,12 +13,14 @@ int	live_instruction(corewar_t *core, champion_t *ch)
 	int nb = load_integer_variable(core, ch->pc + 1);
 	bool isdo = false;
 	champion_t *champ;
+	champion_t *real;
 
 	while (list != NULL) {
 		champ = (champion_t *)list->data;
 		if (champ->number == nb) {
 			champ->life_cycle = 0;
 			if (isdo == false) {
+				real = champ;
 				isdo = true;
 				core->nbr_live++;
 				core->last_alive = ch;
@@ -27,7 +29,7 @@ int	live_instruction(corewar_t *core, champion_t *ch)
 		list = list->next;
 	}
 	if (isdo == true && core->dump == -1)
-		my_printf("The player %i (%s) is alive\n", nb, champ->name);
+		my_printf("The player %i (%s) is alive\n", nb, real->name);
 	ch->pc = (ch->pc + 5) % core->size_memory;
 	return (0);
 }

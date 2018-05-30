@@ -31,12 +31,10 @@ void	action_champion(corewar_t *core)
 	linked_list_t *list = core->champion;
 	champion_t *champ;
 	int op;
-	unsigned int i = 0;
 
 	while (list != NULL) {
 		champ = (champion_t *)list->data;
 		op = get_opcode_byte(champ, core);
-		i++;
 		if (op != 0 && champ->action_cycle > op_tab[op - 1].nbr_cycles) {
 			champ->action_cycle = 0;
 			if (ptr[op - 1] != NULL)
