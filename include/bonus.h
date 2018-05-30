@@ -47,22 +47,30 @@ typedef struct bonus_s {
 
 	// text
 	sfText *name_champion[7];
+	sfText *caracteristique[5];
+	sfText *value_carac[5];
 
 	// other
 	sfFont *font;
 
 } bonus_t;
 
-void	event(bonus_t *bonus);
+void	event(bonus_t *bonus, corewar_t *core);
 
-void	display(bonus_t *bonus);
+void	display(bonus_t *bonus, corewar_t *core);
 
 void	update_all(bonus_t *bonus, corewar_t *core);
 
 void	write_one_memory(framebuffer_t *frame, int x, int y, sfColor color);
 
+char	*transform_integer_in_str(int nb);
+
+void	destroy_dead_champion_graph(bonus_t *bonus, corewar_t *core);
+
 // set
 void	set_name_champion(bonus_t *bonus, corewar_t *core);
+
+void	set_caracteristique(bonus_t *bonus);
 
 void	set_bonus(bonus_t *bonus, corewar_t *core);
 

@@ -14,10 +14,13 @@ WAY_COR	=	../corewar/src
 SRC	=	$(WAY)/main.c	\
 		$(WAY)/loop_game_graphique.c			\
 		$(WAY)/set/set_bonus.c			\
+		$(WAY)/set/set_caracteristique.c			\
 		$(WAY)/set/set_name_champion.c			\
 		$(WAY)/event.c			\
+		$(WAY)/transform_integer_in_str.c			\
 		$(WAY)/display.c			\
 		$(WAY)/update_all.c			\
+		$(WAY)/destroy_dead_champion_graph.c			\
 		$(WAY_COR)/create_champion/create_champion.c	\
 		$(WAY_COR)/create_champion/create_list_champion.c	\
 		$(WAY_COR)/create_corewar/set_memory.c		\

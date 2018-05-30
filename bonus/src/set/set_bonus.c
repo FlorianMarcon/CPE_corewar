@@ -53,4 +53,5 @@ void	set_bonus(bonus_t *bonus, corewar_t *core)
 	set_memory_graph(bonus);
 	set_color(bonus);
 	set_name_champion(bonus, core);
+	set_caracteristique(bonus);
 }

@@ -16,6 +16,7 @@ void	set_virgil_corewar(corewar_t *core)
 	core->cycle_delta = CYCLE_DELTA;
 	core->nbr_max_live = NBR_LIVE;
 	core->nbr_live = 0;
+	core->nbr_live_total = 0;
 	core->size_memory = MEM_SIZE;
 	core->dump = -1;
 	core->graphical = false;

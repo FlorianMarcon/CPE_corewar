@@ -44,6 +44,7 @@ typedef struct corewar {
 	int nb_champion;
 	int nbr_max_live;
 	int nbr_live;
+	int nbr_live_total;
 	int dump;
 
 	char memory[MEM_SIZE];

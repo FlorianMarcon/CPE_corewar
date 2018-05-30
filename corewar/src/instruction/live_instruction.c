@@ -23,6 +23,7 @@ int	live_instruction(corewar_t *core, champion_t *ch)
 				real = champ;
 				isdo = true;
 				core->nbr_live++;
+				core->nbr_live_total++;
 				core->last_alive = ch;
 			}
 		}

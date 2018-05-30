@@ -9,7 +9,7 @@
 #include "header_corewar.h"
 #include "bonus.h"
 
-void	event(bonus_t *bonus)
+void	event(bonus_t *bonus, corewar_t *core)
 {
 	while (sfRenderWindow_pollEvent(bonus->win, &bonus->event)) {
 		if (bonus->event.type == sfEvtClosed)
@@ -18,6 +18,6 @@ void	event(bonus_t *bonus)
 			sfRenderWindow_close(bonus->win);
 	}
 	sfRenderWindow_clear(bonus->win, sfBlack);
-	display(bonus);
+	display(bonus, core);
         sfRenderWindow_display(bonus->win);
 }

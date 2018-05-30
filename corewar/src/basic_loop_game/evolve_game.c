@@ -49,5 +49,4 @@ void	evolve_game(corewar_t *core)
 	action_champion(core);
 	up_cycle(core->champion);
 	up_cycle_to_die(core);
-	destroy_dead_champion(core);
 }

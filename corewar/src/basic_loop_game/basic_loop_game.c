@@ -14,6 +14,7 @@ int	basic_loop_game(corewar_t *core)
 		if (core->cycle == core->dump)
 			display_dump(core);
 		evolve_game(core);
+		destroy_dead_champion(core);
 	}
 	if (core->dump == -1)
 		my_printf("The player %i (%s) has won.\n", core->last_alive->number, core->last_alive->name);
