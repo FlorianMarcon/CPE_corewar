@@ -41,5 +41,6 @@ int	fork_instruction(corewar_t *core, champion_t *ch)
 	create_node(core->champion, new);
 	new->pc = (ch->pc + val % IDX_MOD) % MEM_SIZE;
 	ch->pc = (ch->pc + 3) % MEM_SIZE;
+	core->nb_champion++;
 	return (0);
 }

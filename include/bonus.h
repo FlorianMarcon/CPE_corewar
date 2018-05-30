@@ -47,6 +47,7 @@ typedef struct bonus_s {
 
 	// text
 	sfText *name_champion[7];
+	int id_champ[7];
 	sfText *caracteristique[5];
 	sfText *value_carac[5];
 

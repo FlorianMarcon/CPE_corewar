@@ -33,7 +33,7 @@ void	set_color(bonus_t *bonus)
 	sfColor transp = {0, 0, 0, 0};
 	sfColor arr[5] = {sfRed, sfBlue, sfGreen, sfYellow, transp};
 	int x = 500;
-	int y = 400;
+	int y = 450;
 
 	for (unsigned int i = 0; i != 5 ; i++) {
 		bonus->color[i].color = arr[i];
@@ -42,7 +42,7 @@ void	set_color(bonus_t *bonus)
 		write_one_memory(&bonus->memory, x * 4, y + 20, arr[i]);
 		write_one_memory(&bonus->memory, (x + 20) * 4, y, arr[i]);
 		write_one_memory(&bonus->memory, (x + 20) * 4, y + 20, arr[i]);
-		y += 100;
+		y += 85;
 	}
 	bonus->color[4].id = 0;
 }

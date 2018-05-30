@@ -12,7 +12,7 @@ void	set_name_champion(bonus_t *bonus, corewar_t *core)
 	linked_list_t *list = core->champion;
 	champion_t *champ = NULL;
 	unsigned int i = 0;
-	sfVector2f vec = {550, 400};
+	sfVector2f vec = {550, 450};
 
 	bonus->font = sfFont_createFromFile("picture/attack_of_the_cucumbers.ttf");
 	while (bonus->font != NULL && list != NULL) {
@@ -22,10 +22,11 @@ void	set_name_champion(bonus_t *bonus, corewar_t *core)
 			sfText_setString(bonus->name_champion[i], champ->name);
 			sfText_setFont(bonus->name_champion[i], bonus->font);
 			sfText_setPosition(bonus->name_champion[i], vec);
-			vec.y += 100;
+			vec.y += 85;
+			i++;
+			bonus->id_champ[i] = champ->number;
 		}
 		list = list->next;
-		i++;
 	}
 	bonus->name_champion[i] = NULL;
 }
