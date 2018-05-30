@@ -31,21 +31,26 @@ void	set_memory_graph(bonus_t *bonus)
 void	set_color(bonus_t *bonus)
 {
 	sfColor transp = {0, 0, 0, 0};
+	sfColor arr[5] = {sfRed, sfBlue, sfGreen, sfYellow, transp};
+	int x = 500;
+	int y = 400;
 
-	bonus->color[0].color = sfRed;
-	bonus->color[0].id = 1;
-	bonus->color[1].color = sfBlue;
-	bonus->color[1].id = 2;
-	bonus->color[2].color = sfGreen;
-	bonus->color[2].id = 3;
-	bonus->color[3].color = sfYellow;
-	bonus->color[3].id = 4;
-	bonus->color[4].color = transp;
+	for (unsigned int i = 0; i != 5 ; i++) {
+		bonus->color[i].color = arr[i];
+		bonus->color[i].id = i + 1;
+		write_one_memory(&bonus->memory, x * 4, y, arr[i]);
+		write_one_memory(&bonus->memory, x * 4, y + 20, arr[i]);
+		write_one_memory(&bonus->memory, (x + 20) * 4, y, arr[i]);
+		write_one_memory(&bonus->memory, (x + 20) * 4, y + 20, arr[i]);
+		y += 100;
+	}
 	bonus->color[4].id = 0;
 }
-void	set_bonus(bonus_t *bonus)
+
+void	set_bonus(bonus_t *bonus, corewar_t *core)
 {
 	create_window(bonus);
 	set_memory_graph(bonus);
 	set_color(bonus);
+	set_name_champion(bonus, core);
 }

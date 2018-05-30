@@ -13,7 +13,8 @@ WAY_COR	=	../corewar/src
 
 SRC	=	$(WAY)/main.c	\
 		$(WAY)/loop_game_graphique.c			\
-		$(WAY)/set_bonus.c			\
+		$(WAY)/set/set_bonus.c			\
+		$(WAY)/set/set_name_champion.c			\
 		$(WAY)/event.c			\
 		$(WAY)/display.c			\
 		$(WAY)/update_all.c			\

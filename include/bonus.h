@@ -45,14 +45,25 @@ typedef struct bonus_s {
 	// color
 	color_t color[6];
 
-} bonus_t;
+	// text
+	sfText *name_champion[7];
 
-void	set_bonus(bonus_t *bonus);
+	// other
+	sfFont *font;
+
+} bonus_t;
 
 void	event(bonus_t *bonus);
 
 void	display(bonus_t *bonus);
 
 void	update_all(bonus_t *bonus, corewar_t *core);
+
+void	write_one_memory(framebuffer_t *frame, int x, int y, sfColor color);
+
+// set
+void	set_name_champion(bonus_t *bonus, corewar_t *core);
+
+void	set_bonus(bonus_t *bonus, corewar_t *core);
 
 #endif

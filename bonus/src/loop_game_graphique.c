@@ -13,7 +13,7 @@ void	loop_game_graphique(corewar_t *core)
 {
 	bonus_t bonus;
 
-	set_bonus(&bonus);
+	set_bonus(&bonus, core);
 	core->last_alive = core->champion->data;
 	while (sfRenderWindow_isOpen(bonus.win) && is_end(core->champion) == 0) {
 		event(&bonus);
