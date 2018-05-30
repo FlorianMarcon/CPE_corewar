@@ -11,9 +11,9 @@
 
 int	len_list(struct linked_list *tmp)
 {
-	int i = 1;
+	unsigned int i = 0;
 
-	while (tmp->next != NULL) {
+	while (tmp != NULL) {
 		tmp = tmp->next;
 		i++;
 	}

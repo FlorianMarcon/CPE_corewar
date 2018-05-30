@@ -28,6 +28,7 @@ SRC	=	$(WAY)/main.c	\
 		$(WAY_COR)/basic_loop_game/destroy_dead_champion.c	\
 		$(WAY_COR)/basic_loop_game/up_cycle.c	\
 		$(WAY_COR)/basic_loop_game/up_cycle_to_die.c	\
+		$(WAY_COR)/basic_loop_game/evolve_game.c	\
 		$(WAY_COR)/utilitaries/little_to_big_endian.c	\
 		$(WAY_COR)/utilitaries/get_opcode_byte.c	\
 		$(WAY_COR)/utilitaries/my_tabcat.c	\
